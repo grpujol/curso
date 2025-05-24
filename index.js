@@ -1,5 +1,5 @@
-const [metodo, entidadEID, ...opciones] = process.argv.slice(2);
-const [entidad, id] = entidadEID.split('/');
+const [metodo, entidadEId, ...opciones] = process.argv.slice(2);
+const [entidad, id] = entidadEId.split('/');
 var options = { method: metodo }
 const nuevoProducto = {};
 if (metodo === 'POST') {
