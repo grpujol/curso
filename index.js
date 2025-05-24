@@ -1,5 +1,5 @@
-const [metodo, entidadID, ...opciones] = process.argv.slice(2);
-const [entidad, id] = entidadID.split('/');
+const [metodo, entidadEID, ...opciones] = process.argv.slice(2);
+const [entidad, id] = entidadEID.split('/');
 var options = { method: metodo }
 const nuevoProducto = {};
 if (metodo === 'POST') {
@@ -11,7 +11,6 @@ if (metodo === 'POST') {
     nuevoProducto.image = '';
     options.headers = { 'Content-Type': 'application/json' };
     options.body = JSON.stringify(nuevoProducto);
-    console.log(nuevoProducto);
 }
 const comando = `${entidad}${id ? '/' + id : ''}`;
 fetch(`https://fakestoreapi.com/${comando}`, options)
