@@ -15,7 +15,6 @@ if (metodo === 'POST') {
 const comando = `${entidad}${id ? '/' + id : ''}`;
 fetch(`https://fakestoreapi.com/${comando}`, options)
     .then(response => {
-        console.log('Status:', response.status);
         return response.json();
     })
     .then(data => {
