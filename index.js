@@ -18,4 +18,6 @@ fetch(`https://fakestoreapi.com/${comando}`, options)
         console.log('Status:', response.status);
         return response.json();
     })
-    .then(data => console.log(data));
+    .then(data => {
+        console.dir(data, { depth: null, colors: true });
+    });
